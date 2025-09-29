@@ -94,6 +94,24 @@ header ul li a:hover {
     padding: 140px;
 }
 
+
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .column {
+        max-width: 100%;
+        padding: 0 15px; /* padding horizontal léger */
+    }
+
+    .column p {
+        padding: 20px 0; /* réduire le padding pour texte */
+        text-align: center;
+    }
+}
+
 .parent {
     display: flex;
     flex-wrap: wrap;
@@ -186,41 +204,58 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.article {
+.articles {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.article article {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 300px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.article-box {
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 25px 20px;
+    max-width: 320px;
+    flex: 1 1 300px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.article article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+.article-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    background-color: #f9fbff;
 }
 
-.article h3 {
-    font-size: 1.4rem;
-    color: #333;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #007BFF;
+.article-box h3 {
+    font-size: 1.5rem;
+    color: #1e90ff;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #1e90ff;
     padding-bottom: 5px;
 }
 
-.article p {
+.article-box p {
     font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
+
+.article-box time {
+    font-size: 0.85rem;
+    color: #999;
+    font-style: italic;
+    align-self: flex-end;
+}
+
 
 .underline,
 .underline-2,
